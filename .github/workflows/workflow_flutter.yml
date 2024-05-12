@@ -1,4 +1,4 @@
-name: Build & Deploy
+name: Build & Deploy Flutter
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -25,7 +25,7 @@ jobs:
 
       - name: 'Get dependencies'
         run: flutter pub get
-        working-directory: example/sketchwarefumodwebflutter
+        working-directory: main/sketchwarefumodwebflutter
 
       - name: 'Build web app'
         run: |
@@ -36,4 +36,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: example/sketchwarefumodwebflutter/build/web
+          publish_dir: main/sketchwarefumodwebflutter/build/web
