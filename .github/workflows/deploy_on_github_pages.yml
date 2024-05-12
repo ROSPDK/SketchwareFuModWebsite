@@ -29,8 +29,8 @@ jobs:
 
       - name: 'Build web app'
         run: |
-          cd example/weathunits_configurator
-          flutter build web --web-renderer=canvaskit --base-href='/sketchwarefumodwebflutter/' --release
+          cd sketchwarefumodwebflutter
+          flutter build web --web-renderer=canvaskit --base-href='/SketchwareFuModWebsite/' --release
       
       - name: 'Deploy web app'
         uses: peaceiris/actions-gh-pages@v3
