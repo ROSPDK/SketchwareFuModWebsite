@@ -27794,7 +27794,7 @@ $1(a){this.a.aR().$0()
 this.b.eP()},
 $S:4}
 A.xc.prototype={
-N(a){return new A.oL(B.At,"Flutter Demo",A.a1x(null,A.a6w(B.G,B.Aa),!0),null)}}
+N(a){return new A.oL(B.At,"Sketchware Fu Mod",A.a1x(null,A.a6w(B.G,B.Aa),!0),null)}}
 A.oY.prototype={
 ak(){return new A.rA(B.n)}}
 A.rA.prototype={
