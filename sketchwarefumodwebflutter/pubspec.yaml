@@ -1,0 +1,22 @@
+name: Sketchware Fu Mod
+description: Handy configurator for creating weather scenes.
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  SketchwareFuModWebsite:
+    path: ../../../SketchwareFuModWebsite
+  url_launcher: ^6.1.14
+
+dev_dependencies:
+  lint: ^2.1.2
+
+flutter:
+  uses-material-design: true
