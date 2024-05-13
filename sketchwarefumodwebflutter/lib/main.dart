@@ -44,6 +44,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: NavigationDrawer(children: [
+          const SizedBox(height: 22),
+          for (var i = 0; i < 30; i++)
+            NavigationDrawerDestination(
+              icon: const Icon(Icons.home_outlined),
+              selectedIcon: const Icon(Icons.home),
+              label: Text('Item $i'),
+            ),
+        ]),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
