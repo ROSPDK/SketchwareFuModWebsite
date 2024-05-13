@@ -53,8 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text('Item $i'),
             ),
         ]),
-      ),
-     );
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
