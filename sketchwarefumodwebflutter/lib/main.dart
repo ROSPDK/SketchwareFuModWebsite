@@ -49,10 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Drawer Header'),
               decoration: BoxDecoration(
                 color: Colors.blue,
-                image: DecorationImage(
-                //image: AssetImage("assets/flutter.jpg"),
+                /*image: DecorationImage(
+                   image: AssetImage("assets/flutter.jpg"),
                      fit: BoxFit.cover)
-              ),
+              ),*/
             ),
           const SizedBox(height: 22),
           for (var i = 0; i < 30; i++)
