@@ -61,7 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ]),
       body: SingleChildScrollView(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
+         CircleAvatar(
+            backgroundImage: AssetImage('img/img1.png'), ///Your image here  from pubspec.yaml
+            radius: 50,
+          ), 
+mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
