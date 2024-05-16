@@ -59,12 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text('Item $i'),
             ),
         ]),
-      body: SingleChildScrollView(
-        child: Column(
-mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+      child: SingleChildScrollView(  
+      //child: Column(
+//mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           CircleAvatar(
-            backgroundImage: AssetImage('img/img1.png'), ///Your image here  from pubspec.yaml
+            backgroundImage: AssetImage('assets/fuMod.png'), ///Your image here  from pubspec.yaml
             radius: 50,
           ),   
            const Text(
