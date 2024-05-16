@@ -59,9 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
               label: Text('Item $i'),
             ),
         ]),
-      body: Column(
+      body: Center(
       child: SingleChildScrollView(  
-      //child: Column(
+      child: Column(
 //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           CircleAvatar(
@@ -78,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
