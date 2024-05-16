@@ -65,7 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
 mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           CircleAvatar(
-            backgroundImage: AssetImage('FuMod.png'), ///Your image here  from pubspec.yaml
+          backgroundColor: Colors.transparent,  
+          backgroundImage: AssetImage('FuMod.png'), ///Your image here  from pubspec.yaml
             radius: 50,
           ),   
            const Text(
