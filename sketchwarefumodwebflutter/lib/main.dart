@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Sketchware Fu Mod'),
     );
   }
 }
@@ -31,12 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
   }
 
   @override
@@ -51,16 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
           child: SvgPicture.asset(
                     'swpro.svg',
                      semanticsLabel: 'SW Pro Logo',
-                    //width: 10,
                   ),
             ),
        ),
           const SizedBox(height: 22),
-          for (var i = 0; i < 30; i++)
+          for (var i = 0; i < 4; i++)
             NavigationDrawerDestination(
               icon: const Icon(Icons.home_outlined),
               selectedIcon: const Icon(Icons.home),
-              label: Text('Item $i'),
+              label: Text('Home'),
             ),
         ]),
       body: Center(
@@ -73,11 +66,12 @@ mainAxisAlignment: MainAxisAlignment.center,
           backgroundImage: AssetImage('FuMod.png'), ///Your image here  from pubspec.yaml
             radius: 50,
           ),   
-           const Text(
-              'You have pushed the button this many times:',
+           Text(
+              'Sketchware Fu Mod',
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             Text(
-              '$_counter',
+              'No code, all awesome. Create epic apps with Sketchware Pro's magical blocks.',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
            Image.asset('mockup.png'),
@@ -85,11 +79,11 @@ mainAxisAlignment: MainAxisAlignment.center,
         ),
       ),
     ),
-      floatingActionButton: FloatingActionButton(
+      /*floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
+      ),*/
     );
   }
 }
