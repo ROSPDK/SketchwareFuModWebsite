@@ -80,7 +80,7 @@ mainAxisAlignment: MainAxisAlignment.center,
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-           Image.asset(‘mockup.png’),
+           Image.asset(‘mockup.png’);
           ],
         ),
       ),
