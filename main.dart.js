@@ -33469,7 +33469,7 @@ L(a){var s,r,q,p,o=null
 this.a.toString
 s=A.aaw("Flutter Demo Home Page",o)
 r=t.F
-q=A.a([new A.C7(A.jE(o,new A.Gg(new A.wf("assets/swpro.svg",o,o,o,o),"SW Pro Logo",o,o),B.B,o,o,o,o,o,o,o,o,o,o),o),B.Ku],r)
+q=A.a([new A.C7(A.jE(o,new A.Gg(new A.wf("swpro.svg",o,o,o,o),"SW Pro Logo",o,o),B.B,o,o,o,o,o,o,o,o,o,o),o),B.Ku],r)
 for(p=0;p<30;++p)q.push(new A.ou(B.CD,B.CB,A.aaw("Item "+p,o),o))
 return new A.vt(new A.qR(s,new A.KL(o,o,1/0,56),o),A.PT(new A.FY(A.alO(A.a([new A.AU(B.w,new A.qV("FuMod.png"),50,o),B.Pu,A.aaw(""+this.d,A.am(a).p3.e)],r),B.Gj),o),o,o),A.adr(B.CA,!1,this.gUM(),"Increment"),new A.DT(q,o),o)}}
 A.a4F.prototype={
