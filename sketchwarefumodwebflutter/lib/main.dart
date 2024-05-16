@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           DrawerHeader(
           child: Container(
           child: SvgPicture.asset(
-                    'assets/swpro.svg',
+                    'swpro.svg',
                      semanticsLabel: 'SW Pro Logo',
                     //width: 10,
                   ),
