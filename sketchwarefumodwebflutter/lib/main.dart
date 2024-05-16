@@ -71,7 +71,7 @@ mainAxisAlignment: MainAxisAlignment.center,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             Text(
-              'No code, all awesome. Create epic apps with Sketchware Pro's magical blocks.',
+              "No code, all awesome. Create epic apps with Sketchware Pro's magical blocks.",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
            Image.asset('mockup.png'),
