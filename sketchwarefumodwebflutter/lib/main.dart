@@ -47,11 +47,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: NavigationDrawer(children: [
           DrawerHeader(
-              child: Text('Drawer Header'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-             ),
-           ),
+          child: Container(
+          child: SvgPicture.asset(
+                    'assets/swpro.svg',
+                    //width: 10,
+                  ),
+            ),
+       ),
           const SizedBox(height: 22),
           for (var i = 0; i < 30; i++)
             NavigationDrawerDestination(
