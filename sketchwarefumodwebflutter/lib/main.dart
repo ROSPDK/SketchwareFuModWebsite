@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
       child: SingleChildScrollView(  
       child: Column(
-//mainAxisAlignment: MainAxisAlignment.center,
+mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           CircleAvatar(
             backgroundImage: AssetImage('assets/fuMod.png'), ///Your image here  from pubspec.yaml
