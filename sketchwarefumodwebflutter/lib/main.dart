@@ -70,11 +70,14 @@ mainAxisAlignment: MainAxisAlignment.center,
            Text(
               'Sketchware Fu Mod',
               style: Theme.of(context).textTheme.titleLarge,
+              fontWeight: FontWeight.bold,
             ),
-            Text(
+         Center(
+            child: Text(
               "No code, all awesome. Create epic apps with Sketchware Pro's magical blocks.",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+           ),
            Image.asset('mockup.png'),
           ],
         ),
