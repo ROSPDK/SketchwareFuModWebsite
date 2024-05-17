@@ -69,8 +69,11 @@ mainAxisAlignment: MainAxisAlignment.center,
           ),   
            Text(
               'Sketchware Fu Mod',
-              style: Theme.of(context).textTheme.titleLarge,
+              //style: Theme.of(context).textTheme.titleLarge,
+              style: TextStyle(
+              fontSize: 20,
               fontWeight: FontWeight.bold,
+              ),
             ),
          Center(
             child: Text(
