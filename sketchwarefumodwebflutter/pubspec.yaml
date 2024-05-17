@@ -90,7 +90,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 fonts:
    - family: GoogleSans
-  fonts:
+     fonts:
    - asset: fonts/GoogleSans-Bold.ttf
           weight: 700
    - asset: fonts/GoogleSans-BoldItalic.ttf
