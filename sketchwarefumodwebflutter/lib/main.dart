@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Sketchware Fu Mod',
       theme: ThemeData(
         fontFamily: 'GoogleSans',
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Sketchware Fu Mod'),
@@ -70,7 +70,7 @@ mainAxisAlignment: MainAxisAlignment.center,
            Text(
               'Sketchware Fu Mod',
               style: TextStyle(
-              fontSize: 34,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
               ),
             ),
