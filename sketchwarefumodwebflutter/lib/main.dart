@@ -21,6 +21,96 @@ void changeTheme(ThemeMode themeMode) {
     });
   }
 
+  var listTheme = "System Theme";
+
+  _showAppThemeDialog() {
+    final SetListTiles _setListTiles = new SetListTiles(
+      listTheme: listTheme,
+    );
+
+    return showDialog(
+      context: context,
+      child: new AlertDialog(
+        title: Text('App Theme'),
+        content: new SingleChildScrollView(
+          child: Column(
+            children: [
+              _setListTiles,
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              setState(() {
+                listTheme = _setListTiles.listTheme;
+              });
+              Navigator.pop(context);
+            },
+            child: Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+
+class SetListTiles extends StatefulWidget {
+  String listTheme;
+  SetListTiles({Key key, this.listTheme}) : super(key: key);
+
+  @override
+  _SetListTilesState createState() => _SetListTilesState();
+}
+
+class _SetListTilesState extends State<SetListTiles> {
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        ListTile(
+          title: Text('System Theme'),
+          leading: new Radio(
+            value: "System Theme",
+            groupValue: widget.listTheme,
+            onChanged: (String selectedTheme) {
+              setState(() {
+                widget.listTheme = selectedTheme;
+                changeTheme(ThemeMode.system),
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: Text('Light Theme'),
+          leading: new Radio(
+            value: "Light Theme",
+            groupValue: widget.listTheme,
+            onChanged: (String selectedTheme) {
+              setState(() {
+                widget.listTheme = selectedTheme;
+                changeTheme(ThemeMode.light),
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: Text('Dark Theme'),
+          leading: new Radio(
+            value: "Dark Theme",
+            groupValue: widget.listTheme,
+            onChanged: (String selectedTheme) {
+              setState(() {
+                widget.listTheme = selectedTheme;
+                changeTheme(ThemeMode.dark),
+              });
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,7 +133,7 @@ void changeTheme(ThemeMode themeMode) {
         actions: [
         IconButton(
         icon: Icon(Icons.dark_mode_outlined),
-        onPressed: () => changeTheme(appThemeMode),
+        onPressed: () => _showAppThemeDialog(),
           ),
         ],
       ),
