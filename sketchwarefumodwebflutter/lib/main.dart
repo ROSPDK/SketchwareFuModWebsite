@@ -42,10 +42,8 @@ void changeTheme(ThemeMode themeMode) {
         title: Text("Sketchware Fu Mod"),
         actions: [
         IconButton(
-        icon: appThemeMode
-            ? const Icon(Icons.dark_mode_outlined)
-            : const Icon(Icons.light_mode_outlined),
-        onPressed: () => changeTheme(!appThemeMode),
+        icon: Icon(Icons.dark_mode_outlined),
+        onPressed: () => changeTheme(appThemeMode),
           ),
         ],
       ),
