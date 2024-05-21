@@ -127,6 +127,7 @@ mainAxisAlignment: MainAxisAlignment.center,
     ),
    );
   }
+}
 
 class SetListTiles extends StatefulWidget {
   String listTheme;
@@ -183,4 +184,3 @@ class _SetListTilesState extends State<SetListTiles> {
     );
     }
   }
-}
