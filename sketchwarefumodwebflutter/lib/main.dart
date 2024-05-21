@@ -133,17 +133,16 @@ class SetListTiles extends StatefulWidget {
   String listTheme;
   SetListTiles({Key? key, this.listTheme}) : super(key: key);
 
-void changeAppTheme(ThemeMode themeMode) {
-    setState(() {
-      ThemeMode appThemeMode = themeMode;
-    });
-  }
-
   @override
   _SetListTilesState createState() => _SetListTilesState();
 }
 
 class _SetListTilesState extends State<SetListTiles> {
+void changeAppTheme(ThemeMode themeMode) {
+    setState(() {
+      ThemeMode appThemeMode = themeMode;
+    });
+  }
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
