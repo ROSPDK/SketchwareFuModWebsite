@@ -39,8 +39,9 @@ ThemeMode appThemeMode = ThemeMode.system;
               _setListTiles,
             ],
           ),
-         },
         ),
+      },
+    ),
         actions: [
           TextButton(
             onPressed: () {
