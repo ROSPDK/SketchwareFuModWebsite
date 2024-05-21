@@ -30,7 +30,8 @@ ThemeMode appThemeMode = ThemeMode.system;
 
     return showDialog(
       context: context,
-      AlertDialog(
+  builder: (BuildContext cx) {
+      return AlertDialog(
         title: Text('App Theme'),
         content: new SingleChildScrollView(
           child: Column(
@@ -39,6 +40,7 @@ ThemeMode appThemeMode = ThemeMode.system;
             ],
           ),
         ),
+      ),
         actions: [
           TextButton(
             onPressed: () {
