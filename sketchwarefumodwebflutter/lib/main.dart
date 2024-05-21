@@ -19,6 +19,7 @@ void changeTheme(ThemeMode themeMode) {
       _themeMode = themeMode;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
