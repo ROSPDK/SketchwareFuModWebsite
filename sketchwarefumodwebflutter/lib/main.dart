@@ -147,7 +147,7 @@ class _SetListTilesState extends State<SetListTiles> {
             onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.system),
+                changeTheme(ThemeMode.system);
               });
             },
           ),
@@ -160,7 +160,7 @@ class _SetListTilesState extends State<SetListTiles> {
             onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.light),
+                changeTheme(ThemeMode.light);
               });
             },
           ),
@@ -173,7 +173,7 @@ class _SetListTilesState extends State<SetListTiles> {
             onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.dark),
+                changeTheme(ThemeMode.dark);
               });
             },
           ),
