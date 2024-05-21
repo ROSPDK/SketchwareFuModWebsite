@@ -40,6 +40,7 @@ ThemeMode appThemeMode = ThemeMode.system;
             ],
           ),
         ),
+       },
       ),
         actions: [
           TextButton(
