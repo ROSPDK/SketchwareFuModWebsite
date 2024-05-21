@@ -133,7 +133,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 
 class SetListTiles extends StatefulWidget {
   String listTheme;
-  SetListTiles({Key? key, this.listTheme}) : super(key: key);
+  const SetListTiles({Key? key, required this.listTheme}) : super(key: key);
 
   @override
   State<SetListTiles> createState() => _SetListTilesState();
