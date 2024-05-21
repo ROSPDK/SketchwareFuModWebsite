@@ -5,10 +5,11 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget { 
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
  
