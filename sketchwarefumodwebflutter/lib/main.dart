@@ -14,10 +14,10 @@ class MyApp extends StatefulWidget {
 
  
 class _MyAppState extends State<MyApp> { 
-ThemeMode _themeMode = ThemeMode.system;
+ThemeMode appThemeMode = ThemeMode.system;
 void changeTheme(ThemeMode themeMode) {
     setState(() {
-      _themeMode = themeMode;
+      appThemeMode = themeMode;
     });
   }
 
@@ -25,7 +25,7 @@ void changeTheme(ThemeMode themeMode) {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sketchware Fu Mod',
-      themeMode: _themeMode,
+      themeMode: appThemeMode,
       theme: ThemeData(
         fontFamily: 'GoogleSans',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
@@ -42,10 +42,10 @@ void changeTheme(ThemeMode themeMode) {
         title: Text("Sketchware Fu Mod"),
         actions: [
         IconButton(
-        icon: _themeMode
+        icon: appThemeMode
             ? const Icon(Icons.dark_mode_outlined)
             : const Icon(Icons.light_mode_outlined),
-        onPressed: () => changeTheme(!_themeMode),
+        onPressed: () => changeTheme(!appThemeMode),
           ),
         ],
       ),
