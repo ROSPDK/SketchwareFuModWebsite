@@ -51,7 +51,7 @@ ThemeMode appThemeMode = ThemeMode.system;
             child: Text('OK'),
           ),
         ],
-      ),
+      );
      },
     );
   }
@@ -132,7 +132,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 }
 
 class SetListTiles extends StatefulWidget {
-  String listTheme;
+  final String listTheme;
   const SetListTiles({Key? key, required this.listTheme}) : super(key: key);
 
   @override
@@ -153,7 +153,7 @@ void changeAppTheme(ThemeMode themeMode) {
           leading: new Radio(
             value: "System Theme",
             groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
+            onChanged: (required String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
                 changeAppTheme(ThemeMode.system);
@@ -166,7 +166,7 @@ void changeAppTheme(ThemeMode themeMode) {
           leading: new Radio(
             value: "Light Theme",
             groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
+            onChanged: (required String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
                 changeAppTheme(ThemeMode.light);
@@ -179,7 +179,7 @@ void changeAppTheme(ThemeMode themeMode) {
           leading: new Radio(
             value: "Dark Theme",
             groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
+            onChanged: (required String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
                 changeAppTheme(ThemeMode.dark);
