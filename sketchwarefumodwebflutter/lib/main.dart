@@ -6,8 +6,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+    required this.useLightMode,
+    required this.handleBrightnessChange,
+    });
 
+final bool useLightMode;
+
+final void Function(bool useLightMode) handleBrightnessChange;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,12 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.brightness_2),
-            tooltip: 'Dark Mode',
-            onPressed: () {
-              // handle the press
-            },
+          _BrightnessButton(
+                handleBrightnessChange: widget.handleBrightnessChange,
           ),
         ],
       ),
@@ -98,6 +102,30 @@ mainAxisAlignment: MainAxisAlignment.center,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),*/
+    );
+  }
+}
+class _BrightnessButton extends StatelessWidget {
+  const _BrightnessButton({
+    required this.handleBrightnessChange,
+    this.showTooltipBelow = true,
+  });
+
+  final Function handleBrightnessChange;
+  final bool showTooltipBelow;
+
+  @override
+  Widget build(BuildContext context) {
+    final isBright = Theme.of(context).brightness == Brightness.light;
+    return Tooltip(
+      preferBelow: showTooltipBelow,
+      message: 'Toggle brightness',
+      child: IconButton(
+        icon: isBright
+            ? const Icon(Icons.dark_mode_outlined)
+            : const Icon(Icons.light_mode_outlined),
+        onPressed: () => handleBrightnessChange(!isBright),
+      ),
     );
   }
 }
