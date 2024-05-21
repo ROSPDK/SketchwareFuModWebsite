@@ -5,22 +5,39 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { 
   const MyApp({super.key});
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-  
+ 
+class _MyAppState extends State<MyApp> { 
+ThemeMode _themeMode = ThemeMode.system;
+void changeTheme(ThemeMode themeMode) {
+    setState(() {
+      _themeMode = themeMode;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sketchware Fu Mod',
+      themeMode: _themeMode,
       theme: ThemeData(
         fontFamily: 'GoogleSans',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData(
+        fontFamily: 'GoogleSans',
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
+      ),
       home: const MyHomePage(title: 'Sketchware Fu Mod'),
-    );
+   );
   }
+ }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -33,7 +50,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-ThemeMode _themeMode = ThemeMode.system;
 
   @override
   Widget build(BuildContext context) {
@@ -98,12 +114,6 @@ mainAxisAlignment: MainAxisAlignment.center,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),*/
-   MyApp.of(context).changeTheme(_themeMode),
-    void changeTheme(ThemeMode themeMode) {
-    setState(() {
-      _themeMode = themeMode;
-     });
-    }
    );
   }
  }
