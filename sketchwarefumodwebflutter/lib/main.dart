@@ -39,6 +39,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            tooltip: 'Dark Mode',
+            onPressed: () {
+              // handle the press
+            },
+          ),
+        ],
       ),
       drawer: NavigationDrawer(children: [
           DrawerHeader(
