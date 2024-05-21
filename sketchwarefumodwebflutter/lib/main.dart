@@ -34,9 +34,9 @@ void changeTheme(ThemeMode themeMode) {
         fontFamily: 'GoogleSans',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
+        brightness: Brightness.dark,
       ),
-      home: Builder(
-        builder: (context) => Scaffold(
+      home: Scaffold(
        appBar: AppBar(
         title: Text("Sketchware Fu Mod"),
         actions: [
@@ -97,6 +97,7 @@ mainAxisAlignment: MainAxisAlignment.center,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),*/
+     ),
    );
   }
  }
