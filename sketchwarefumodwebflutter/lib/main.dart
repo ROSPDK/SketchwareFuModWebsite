@@ -30,7 +30,7 @@ ThemeMode appThemeMode = ThemeMode.system;
 
     return showDialog(
       context: context,
-      child: new AlertDialog(
+      return AlertDialog(
         title: Text('App Theme'),
         content: new SingleChildScrollView(
           child: Column(
@@ -134,7 +134,7 @@ class SetListTiles extends StatefulWidget {
   SetListTiles({Key? key, this.listTheme}) : super(key: key);
 
   @override
-  _SetListTilesState createState() => _SetListTilesState();
+  State<SetListTiles> createState() => _SetListTilesState();
 }
 
 class _SetListTilesState extends State<SetListTiles> {
