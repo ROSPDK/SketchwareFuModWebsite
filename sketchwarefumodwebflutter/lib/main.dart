@@ -35,27 +35,10 @@ void changeTheme(ThemeMode themeMode) {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Sketchware Fu Mod'),
-   );
-  }
- }
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      home: Builder(
+        builder: (context) => Scaffold(
+       appBar: AppBar(
+        title: Text("Sketchware Fu Mod"),
         actions: [
         IconButton(
         icon: _themeMode
@@ -89,7 +72,7 @@ mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           CircleAvatar(
           backgroundColor: Colors.transparent,  
-          backgroundImage: AssetImage('FuMod.png'), ///Your image here  from pubspec.yaml
+          backgroundImage: AssetImage('FuMod.png'), 
             radius: 50,
           ),   
            Text(
