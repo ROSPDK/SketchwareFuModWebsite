@@ -6,15 +6,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({
-    super.key,
-    required this.useLightMode,
-    required this.handleBrightnessChange,
-    });
+  const MyApp({super.key});
 
-final bool useLightMode;
-
-final void Function(bool useLightMode) handleBrightnessChange;
   
   @override
   Widget build(BuildContext context) {
@@ -40,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+ThemeMode _themeMode = ThemeMode.system;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
-          _BrightnessButton(
-                handleBrightnessChange: widget.handleBrightnessChange,
+        IconButton(
+        icon: _themeMode
+            ? const Icon(Icons.dark_mode_outlined)
+            : const Icon(Icons.light_mode_outlined),
+        onPressed: () => changeTheme(!_themeMode),
           ),
         ],
       ),
@@ -102,30 +98,12 @@ mainAxisAlignment: MainAxisAlignment.center,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),*/
-    );
+   void changeTheme(ThemeMode themeMode) {
+    setState(() {
+      _themeMode = themeMode;
+    });
+    }
+   );
   }
-}
-class _BrightnessButton extends StatelessWidget {
-  const _BrightnessButton({
-    required this.handleBrightnessChange,
-    this.showTooltipBelow = true,
-  });
-
-  final Function handleBrightnessChange;
-  final bool showTooltipBelow;
-
-  @override
-  Widget build(BuildContext context) {
-    final isBright = Theme.of(context).brightness == Brightness.light;
-    return Tooltip(
-      preferBelow: showTooltipBelow,
-      message: 'Toggle brightness',
-      child: IconButton(
-        icon: isBright
-            ? const Icon(Icons.dark_mode_outlined)
-            : const Icon(Icons.light_mode_outlined),
-        onPressed: () => handleBrightnessChange(!isBright),
-      ),
-    );
-  }
+ }
 }
