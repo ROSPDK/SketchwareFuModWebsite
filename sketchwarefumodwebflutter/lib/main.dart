@@ -15,11 +15,11 @@ class MyApp extends StatefulWidget {
  
 class _MyAppState extends State<MyApp> { 
 ThemeMode appThemeMode = ThemeMode.system;
-void changeTheme(ThemeMode themeMode) {
+/* void changeAppTheme(ThemeMode themeMode) {
     setState(() {
       appThemeMode = themeMode;
     });
-  }
+  } */
 
   var listTheme = "System Theme";
 
@@ -76,7 +76,7 @@ void changeTheme(ThemeMode themeMode) {
         actions: [
         IconButton(
         icon: Icon(Icons.dark_mode_outlined),
-        onPressed: () => _showAppThemeDialog(),
+        onPressed: _showAppThemeDialog(),
           ),
         ],
       ),
@@ -131,7 +131,13 @@ mainAxisAlignment: MainAxisAlignment.center,
 
 class SetListTiles extends StatefulWidget {
   String listTheme;
-  SetListTiles({Key key, this.listTheme}) : super(key: key);
+  SetListTiles({Key? key, this.listTheme}) : super(key: key);
+
+void changeAppTheme(ThemeMode themeMode) {
+    setState(() {
+      ThemeMode appThemeMode = themeMode;
+    });
+  }
 
   @override
   _SetListTilesState createState() => _SetListTilesState();
@@ -149,7 +155,7 @@ class _SetListTilesState extends State<SetListTiles> {
             onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.system);
+                changeAppTheme(ThemeMode.system);
               });
             },
           ),
@@ -162,7 +168,7 @@ class _SetListTilesState extends State<SetListTiles> {
             onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.light);
+                changeAppTheme(ThemeMode.light);
               });
             },
           ),
@@ -175,7 +181,7 @@ class _SetListTilesState extends State<SetListTiles> {
             onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.dark);
+                changeAppTheme(ThemeMode.dark);
               });
             },
           ),
