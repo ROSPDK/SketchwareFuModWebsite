@@ -40,8 +40,6 @@ ThemeMode appThemeMode = ThemeMode.system;
             ],
           ),
         ),
-      },
-    ),
         actions: [
           TextButton(
             onPressed: () {
@@ -54,7 +52,7 @@ ThemeMode appThemeMode = ThemeMode.system;
           ),
         ],
       ),
-     ),
+     },
     );
   }
 
