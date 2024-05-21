@@ -98,10 +98,11 @@ mainAxisAlignment: MainAxisAlignment.center,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),*/
-   void changeTheme(ThemeMode themeMode) {
+   MyApp.of(context).changeTheme(_themeMode),
+    void changeTheme(ThemeMode themeMode) {
     setState(() {
       _themeMode = themeMode;
-    });
+     });
     }
    );
   }
