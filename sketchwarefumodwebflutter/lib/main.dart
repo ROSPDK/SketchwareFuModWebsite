@@ -38,7 +38,6 @@ void changeTheme(ThemeMode themeMode) {
    );
   }
  }
-}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -117,4 +116,5 @@ mainAxisAlignment: MainAxisAlignment.center,
    );
   }
  }
+}
 }
