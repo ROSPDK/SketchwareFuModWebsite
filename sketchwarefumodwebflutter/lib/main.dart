@@ -54,63 +54,6 @@ void changeTheme(ThemeMode themeMode) {
     );
   }
 
-class SetListTiles extends StatefulWidget {
-  String listTheme;
-  SetListTiles({Key key, this.listTheme}) : super(key: key);
-
-  @override
-  _SetListTilesState createState() => _SetListTilesState();
-}
-
-class _SetListTilesState extends State<SetListTiles> {
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ListTile(
-          title: Text('System Theme'),
-          leading: new Radio(
-            value: "System Theme",
-            groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
-              setState(() {
-                widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.system),
-              });
-            },
-          ),
-        ),
-        ListTile(
-          title: Text('Light Theme'),
-          leading: new Radio(
-            value: "Light Theme",
-            groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
-              setState(() {
-                widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.light),
-              });
-            },
-          ),
-        ),
-        ListTile(
-          title: Text('Dark Theme'),
-          leading: new Radio(
-            value: "Dark Theme",
-            groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
-              setState(() {
-                widget.listTheme = selectedTheme;
-                changeTheme(ThemeMode.dark),
-              });
-            },
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -184,4 +127,59 @@ mainAxisAlignment: MainAxisAlignment.center,
     ),
    );
   }
- }
+class SetListTiles extends StatefulWidget {
+  String listTheme;
+  SetListTiles({Key key, this.listTheme}) : super(key: key);
+
+  @override
+  _SetListTilesState createState() => _SetListTilesState();
+}
+
+class _SetListTilesState extends State<SetListTiles> {
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        ListTile(
+          title: Text('System Theme'),
+          leading: new Radio(
+            value: "System Theme",
+            groupValue: widget.listTheme,
+            onChanged: (String selectedTheme) {
+              setState(() {
+                widget.listTheme = selectedTheme;
+                changeTheme(ThemeMode.system),
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: Text('Light Theme'),
+          leading: new Radio(
+            value: "Light Theme",
+            groupValue: widget.listTheme,
+            onChanged: (String selectedTheme) {
+              setState(() {
+                widget.listTheme = selectedTheme;
+                changeTheme(ThemeMode.light),
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: Text('Dark Theme'),
+          leading: new Radio(
+            value: "Dark Theme",
+            groupValue: widget.listTheme,
+            onChanged: (String selectedTheme) {
+              setState(() {
+                widget.listTheme = selectedTheme;
+                changeTheme(ThemeMode.dark),
+              });
+            },
+          ),
+        ),
+      ],
+    );
+    }
+  }
+}
