@@ -30,7 +30,7 @@ ThemeMode appThemeMode = ThemeMode.system;
 
     return showDialog(
       context: context,
-      return AlertDialog(
+      AlertDialog(
         title: Text('App Theme'),
         content: new SingleChildScrollView(
           child: Column(
