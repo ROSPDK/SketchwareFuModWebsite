@@ -107,7 +107,8 @@ mainAxisAlignment: MainAxisAlignment.center,
       ),
      ),
     ),
-    void onSelected(BuildContext context, int item) {
+   );
+void onSelected(BuildContext context, int item) {
     switch (item) {
       case 0:
         break;
@@ -116,7 +117,6 @@ mainAxisAlignment: MainAxisAlignment.center,
       case 2:
      }
     }
-   );
   }
 }
 
