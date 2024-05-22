@@ -21,25 +21,6 @@ ThemeMode appThemeMode = ThemeMode.system;
     });
   }
 
-void showAppThemeBottomSheet(BuildContext context) {
-    showModalBottomSheet<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return new Container(
-        child: new Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: new Text(
-            'Coming Soon',
-            textAlign: TextAlign.center,
-            style: new TextStyle(
-                color: Colors.blue,
-                fontSize: 24.0),
-          ),
-        ),
-      );
-    });
-   }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,12 +41,24 @@ void showAppThemeBottomSheet(BuildContext context) {
        appBar: AppBar(
         title: Text("Sketchware Fu Mod"),
         actions: [
-        IconButton(
-        icon: Icon(Icons.dark_mode_outlined),
-        onPressed: () {
-          showAppThemeBottomSheet(context);
-        },
-          ),
+        PopupMenuButton<int>(
+                icon: Icon(Icons.dark_mode_outlined),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                onSelected: (item) => onSelected(context, item),
+                itemBuilder: (context) => [
+                  PopupMenuItem<int>(
+                    value: 0,
+                    child: Text('System Theme'),
+                  ),
+                  PopupMenuItem<int>(
+                    value: 1,
+                    child: Text('Light Theme'),
+                  ),
+                  PopupMenuItem<int>(
+                    value: 2,
+                    child: Text('Dark Theme'),
+                  ),
+               ],
         ],
       ),
       drawer: NavigationDrawer(children: [
