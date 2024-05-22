@@ -101,7 +101,6 @@ mainAxisAlignment: MainAxisAlignment.center,
       ),
      ),
     ),
-   );
   );
   }
 }
