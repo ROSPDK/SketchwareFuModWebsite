@@ -54,7 +54,7 @@ ThemeMode appThemeMode = ThemeMode.system;
             'Coming Soon',
             textAlign: TextAlign.center,
             style: new TextStyle(
-                color: Theme.of(context).accentColor,
+                color: Colors.blue,
                 fontSize: 24.0),
           ),
         ),
