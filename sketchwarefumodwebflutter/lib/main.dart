@@ -40,9 +40,9 @@ ThemeMode appThemeMode = ThemeMode.system;
       home: Scaffold(
        appBar: AppBar(
         title: Text("Sketchware Fu Mod"),
-        actions: [
-        PopupMenuButton<String>(
-        icon: Icon(Icons.dark_mode_outlined),
+        actions: <Widget>[
+    PopupMenuButton<String>(
+      icon: Icon(Icons.dark_mode_outlined),
       onSelected: (String value) {
         // Handle your action on selection here
       },
@@ -54,8 +54,9 @@ ThemeMode appThemeMode = ThemeMode.system;
           );
         }).toList();
       },
+    ),
+  ],
       ),
-      ],
       drawer: NavigationDrawer(children: [
           DrawerHeader(
           child: Container(
@@ -101,8 +102,6 @@ mainAxisAlignment: MainAxisAlignment.center,
       ),
      ),
     ),
-  ),
-  );
+   );
   }
 }
-
