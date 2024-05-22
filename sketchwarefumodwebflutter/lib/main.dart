@@ -21,7 +21,7 @@ ThemeMode appThemeMode = ThemeMode.system;
     });
   }
 
-void _showAppThemeBottomSheet(BuildContext context) {
+void showAppThemeBottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
     context: context,
     builder: (BuildContext context) {
@@ -62,7 +62,9 @@ void _showAppThemeBottomSheet(BuildContext context) {
         actions: [
         IconButton(
         icon: Icon(Icons.dark_mode_outlined),
-        onPressed: _showAppThemeBottomSheet(context),
+        onPressed: () {
+          showAppThemeBottomSheet(context);
+        },
           ),
         ],
       ),
