@@ -53,8 +53,9 @@ ThemeMode appThemeMode = ThemeMode.system;
             child: Text(choice),
           );
         }).toList();
-        ],
+      }
       ),
+      ],
       drawer: NavigationDrawer(children: [
           DrawerHeader(
           child: Container(
