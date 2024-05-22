@@ -21,6 +21,25 @@ ThemeMode appThemeMode = ThemeMode.system;
     });
   }
 
+void showAppThemeBottomSheet(BuildContext context) {
+    showModalBottomSheet<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return new Container(
+        child: new Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: new Text(
+            'Coming Soon',
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+                color: Colors.blue,
+                fontSize: 24.0),
+          ),
+        ),
+      );
+    });
+   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,24 +62,7 @@ ThemeMode appThemeMode = ThemeMode.system;
         actions: [
         IconButton(
         icon: Icon(Icons.dark_mode_outlined),
-        onPressed: () {
-      showModalBottomSheet<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return new Container(
-        child: new Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: new Text(
-            'Coming Soon',
-            textAlign: TextAlign.center,
-            style: new TextStyle(
-                color: Colors.blue,
-                fontSize: 24.0),
-          ),
-        ),
-      );
-    });
-            },
+        onPressed: showAppThemeBottomSheet(),
           ),
         ],
       ),
