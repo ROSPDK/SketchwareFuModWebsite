@@ -45,6 +45,17 @@ ThemeMode appThemeMode = ThemeMode.system;
       icon: Icon(Icons.dark_mode_outlined),
       onSelected: (String value) {
         // Handle your action on selection here
+      switch (value) {
+      case 'System Theme':
+        changeAppTheme(ThemeMode.system);
+        break;
+      case 'Light Theme':
+        changeAppTheme(ThemeMode.light);
+        break;
+      case 'Dark Theme':
+        changeAppTheme(ThemeMode.dark);
+        break;
+       }
       },
       itemBuilder: (BuildContext context) {
         return {'System Theme', 'Light Theme', 'Dark Theme'}.map((String choice) {
