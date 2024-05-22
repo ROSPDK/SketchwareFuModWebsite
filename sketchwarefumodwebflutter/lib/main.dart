@@ -15,45 +15,10 @@ class MyApp extends StatefulWidget {
  
 class _MyAppState extends State<MyApp> { 
 ThemeMode appThemeMode = ThemeMode.system;
-/* void changeAppTheme(ThemeMode themeMode) {
+ void changeAppTheme(ThemeMode themeMode) {
     setState(() {
       appThemeMode = themeMode;
     });
-  } */
-
-  var listTheme = "System Theme";
-
-  _showAppThemeDialog() {
-    final SetListTiles _setListTiles = new SetListTiles(
-      listTheme: listTheme,
-    );
-
-    return showDialog(
-      context: context,
-  builder: (BuildContext cx) {
-      return AlertDialog(
-        title: Text('App Theme'),
-        content: new SingleChildScrollView(
-          child: Column(
-            children: [
-              _setListTiles,
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              setState(() {
-                listTheme = _setListTiles.listTheme;
-              });
-              Navigator.pop(context);
-            },
-            child: Text('OK'),
-          ),
-        ],
-      );
-     },
-    );
   }
 
   @override
@@ -78,7 +43,37 @@ ThemeMode appThemeMode = ThemeMode.system;
         actions: [
         IconButton(
         icon: Icon(Icons.dark_mode_outlined),
-        onPressed: _showAppThemeDialog(),
+        onPressed: () {
+      showModalBottomSheet(
+                barrierColor: Colors.white.withOpacity(0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(25),
+                    ),
+                  ),
+                  context: context,
+                  builder: (context) => Container(
+                        height: 320,
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 20,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(25),
+                            topRight: Radius.circular(25),
+                          ),
+                        ),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                        child: Center(child: Text('Coming Soon')),
+                      ));
+            },
           ),
         ],
       ),
@@ -131,63 +126,3 @@ mainAxisAlignment: MainAxisAlignment.center,
   }
 }
 
-class SetListTiles extends StatefulWidget {
-  String listTheme;
-  SetListTiles({Key? key, required this.listTheme}) : super(key: key);
-
-  @override
-  State<SetListTiles> createState() => _SetListTilesState();
-}
-
-class _SetListTilesState extends State<SetListTiles> {
-void changeAppTheme(ThemeMode themeMode) {
-    setState(() {
-      ThemeMode appThemeMode = themeMode;
-    });
-  }
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ListTile(
-          title: Text('System Theme'),
-          leading: new Radio(
-            value: "System Theme",
-            groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
-              setState(() {
-                widget.listTheme = selectedTheme;
-                changeAppTheme(ThemeMode.system);
-              });
-            },
-          ),
-        ),
-        ListTile(
-          title: Text('Light Theme'),
-          leading: new Radio(
-            value: "Light Theme",
-            groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
-              setState(() {
-                widget.listTheme = selectedTheme;
-                changeAppTheme(ThemeMode.light);
-              });
-            },
-          ),
-        ),
-        ListTile(
-          title: Text('Dark Theme'),
-          leading: new Radio(
-            value: "Dark Theme",
-            groupValue: widget.listTheme,
-            onChanged: (String selectedTheme) {
-              setState(() {
-                widget.listTheme = selectedTheme;
-                changeAppTheme(ThemeMode.dark);
-              });
-            },
-          ),
-        ),
-      ],
-    );
-    }
-  }
