@@ -59,6 +59,7 @@ ThemeMode appThemeMode = ThemeMode.system;
                     child: Text('Dark Theme'),
                   ),
                ],
+             ),
         ],
       ),
       drawer: NavigationDrawer(children: [
@@ -106,6 +107,15 @@ mainAxisAlignment: MainAxisAlignment.center,
       ),
      ),
     ),
+    void onSelected(BuildContext context, int item) {
+    switch (item) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+     }
+    }
    );
   }
 }
