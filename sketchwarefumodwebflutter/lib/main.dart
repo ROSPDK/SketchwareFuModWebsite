@@ -44,35 +44,22 @@ ThemeMode appThemeMode = ThemeMode.system;
         IconButton(
         icon: Icon(Icons.dark_mode_outlined),
         onPressed: () {
-      showModalBottomSheet(
-                barrierColor: Colors.white.withOpacity(0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(25),
-                    ),
-                  ),
-                  context: context,
-                  builder: (context) => Container(
-                        height: 320,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 20,
-                              offset: Offset(0, 3),
-                            ),
-                          ],
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(25),
-                            topRight: Radius.circular(25),
-                          ),
-                        ),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                        child: Center(child: Text('Coming Soon')),
-                      ));
+      showModalBottomSheet<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return new Container(
+        child: new Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: new Text(
+            'Coming Soon',
+            textAlign: TextAlign.center,
+            style: new TextStyle(
+                color: Theme.of(context).accentColor,
+                fontSize: 24.0),
+          ),
+        ),
+      );
+    });
             },
           ),
         ],
