@@ -44,7 +44,9 @@ ThemeMode appThemeMode = ThemeMode.system;
         PopupMenuButton<int>(
                 icon: Icon(Icons.dark_mode_outlined),
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
-                //onSelected: (item) => onSelected(context, item),
+                onSelected: (String value) {
+                // Handle your action on selection here
+               },
                 itemBuilder: (context) => [
                   PopupMenuItem<int>(
                     value: 0,
@@ -108,15 +110,6 @@ mainAxisAlignment: MainAxisAlignment.center,
      ),
     ),
    );
-/*void onSelected(BuildContext context, int item) {
-    switch (item) {
-      case 0:
-        break;
-      case 1:
-        break;
-      case 2:
-     }
-    }*/
   }
 }
 
