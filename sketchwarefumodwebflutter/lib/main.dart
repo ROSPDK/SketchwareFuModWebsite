@@ -41,27 +41,18 @@ ThemeMode appThemeMode = ThemeMode.system;
        appBar: AppBar(
         title: Text("Sketchware Fu Mod"),
         actions: [
-        PopupMenuButton<int>(
-                icon: Icon(Icons.dark_mode_outlined),
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-                onSelected: (String value) {
-                // Handle your action on selection here
-               },
-                itemBuilder: (context) => [
-                  PopupMenuItem<int>(
-                    value: 0,
-                    child: Text('System Theme'),
-                  ),
-                  PopupMenuItem<int>(
-                    value: 1,
-                    child: Text('Light Theme'),
-                  ),
-                  PopupMenuItem<int>(
-                    value: 2,
-                    child: Text('Dark Theme'),
-                  ),
-               ],
-             ),
+        PopupMenuButton<String>(
+        icon: Icon(Icons.dark_mode_outlined),
+      onSelected: (String value) {
+        // Handle your action on selection here
+      },
+      itemBuilder: (BuildContext context) {
+        return {'System Theme', 'Light Theme', 'Dark Theme'}.map((String choice) {
+          return PopupMenuItem<String>(
+            value: choice,
+            child: Text(choice),
+          );
+        }).toList();
         ],
       ),
       drawer: NavigationDrawer(children: [
