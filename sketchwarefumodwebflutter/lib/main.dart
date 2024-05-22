@@ -153,7 +153,7 @@ void changeAppTheme(ThemeMode themeMode) {
           leading: new Radio(
             value: "System Theme",
             groupValue: widget.listTheme,
-            onChanged: (String selectedTheme)? {
+            onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
                 changeAppTheme(ThemeMode.system);
@@ -166,7 +166,7 @@ void changeAppTheme(ThemeMode themeMode) {
           leading: new Radio(
             value: "Light Theme",
             groupValue: widget.listTheme,
-            onChanged: (String selectedTheme)? {
+            onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
                 changeAppTheme(ThemeMode.light);
@@ -179,7 +179,7 @@ void changeAppTheme(ThemeMode themeMode) {
           leading: new Radio(
             value: "Dark Theme",
             groupValue: widget.listTheme,
-            onChanged: (String selectedTheme)? {
+            onChanged: (String selectedTheme) {
               setState(() {
                 widget.listTheme = selectedTheme;
                 changeAppTheme(ThemeMode.dark);
